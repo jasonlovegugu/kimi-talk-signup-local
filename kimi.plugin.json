@@ -1,0 +1,40 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "kimi-talk-signup-local",
+  "version": "0.1.5+local.1",
+  "description": "真爱粉亮出订阅证明，走 Wildcard 免审直通报名 KIMI Talk；普通用户正常排队审核。Wildcard 是通用活动报名分层工具，本插件为 KIMI 社区版本。",
+  "keywords": [
+    "Wildcard",
+    "Kimi Talk",
+    "活动报名",
+    "免审直通",
+    "深度用户",
+    "社区活动"
+  ],
+  "author": "Jason (Kimi ambassador)",
+  "license": "MIT",
+  "skillInstructions": "报名与活动浏览由对话完成；脚本用 python3/bash 调，浏览器内取数走 Kimi WebBridge 注入执行。",
+  "interface": {
+    "displayName": "Wildcard · for KIMI Talk",
+    "shortDescription": "真爱粉亮出订阅证明，走 Wildcard 免审直通报名 KIMI Talk",
+    "longDescription": "浏览 Kimi Talk 及 Kimi 官方社区线下活动并在对话内报名。深度/付费用户可授权读取本人 Kimi 订阅信息进行快速核验，达标即走 Wildcard 免审直通通道；其余用户正常排队审核。Wildcard 是通用的活动报名分层工具，本插件为 Kimi 社区版本。",
+    "developerName": "Local developer",
+    "websiteURL": "",
+    "iconUrl": "",
+    "category": "PRODUCTIVITY",
+    "defaultLocale": "zh-CN",
+    "locales": "./locales/",
+    "tryPrompts": [
+      "最近有哪些 Kimi Talk 线下活动？",
+      "我想报名上海站的 Kimi Talk",
+      "我是深度用户，帮我走免审直通通道报名"
+    ],
+    "skillOverrides": {
+      "kimi-talk-signup": {
+        "displayName": "Wildcard · for KIMI Talk",
+        "description": "真爱粉亮出订阅证明，走 Wildcard 免审直通报名 KIMI Talk"
+      }
+    }
+  },
+  "skills": "./skills/"
+}

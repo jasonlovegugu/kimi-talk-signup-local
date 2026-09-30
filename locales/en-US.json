@@ -1,0 +1,17 @@
+{
+  "displayName": "Wildcard · for KIMI Talk",
+  "shortDescription": "True fans show their subscription receipts and skip the line — Wildcard fast-track signup for KIMI Talk events",
+  "longDescription": "Browse upcoming KIMI Talk and official community offline events and sign up in a conversation. Power users can authorize a read-only capture of their own KIMI subscription page (plan, usage, member since, subscription count) for Wildcard fast-track verification. Wildcard is a generic event-signup tiering tool; this plugin is the KIMI community edition.",
+  "developerName": "Jason (KIMI ambassador)",
+  "tryPrompts": [
+    "Show me upcoming KIMI Talk events",
+    "I want to sign up for the Shanghai KIMI Talk",
+    "I have a Wildcard — use fast-track verification for my signup"
+  ],
+  "skillOverrides": {
+    "kimi-talk-signup": {
+      "displayName": "Wildcard · for KIMI Talk",
+      "description": "Browse and sign up for KIMI Talk events; power users get Wildcard fast-track verification via their own subscription info"
+    }
+  }
+}
