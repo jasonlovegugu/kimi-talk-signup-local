@@ -1,7 +1,7 @@
 {
   "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
   "name": "kimi-talk-signup-local",
-  "version": "0.1.5+local.1",
+  "version": "0.1.5+local.20260930-112529",
   "description": "真爱粉亮出订阅证明，走 Wildcard 免审直通报名 KIMI Talk；普通用户正常排队审核。Wildcard 是通用活动报名分层工具，本插件为 KIMI 社区版本。",
   "keywords": [
     "Wildcard",
