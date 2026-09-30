@@ -37,7 +37,27 @@ description: 浏览 Kimi Talk 及 Kimi 官方社区线下活动、在对话里�
 
 1. 读取 `data/events.json`，按城市/时间分组展示：活动名、时间、地点、名额、是否 Kimi Talk 主活动、Luma 链接、状态。
 2. **人工维护清单制（不可妥协）**：只展示 `data/events.json` 清单里、且带真实可验证链接的活动——清单由组织者人工维护，**没有链接的活动根本不应该出现在清单里**；万一发现无链接或验证不通过的条目，不向用户展示，直接提醒组织者更新清单。展示前对链接实际打开验证一次（页面真实存在、时间地点一致）。清单为空就如实说「最近没有活动」。**绝不展示清单之外的活动，绝不编造、绝不展示未验证的链接。**
-3. 用户表现出报名意向时，主动说明两条通道的区别，询问走哪条（深度直通需授权读取订阅信息，普通通道只需基本信息）。
+3. 用户表现出报名意向时，主动说明两条通道的区别，询问走哪条（深度直通需授权读取订阅信息，普通通道只需基本信息）。询问方式优先用「流程 A2」的卡片；宿主不具备 Blueprint 能力时回退文字提问。
+
+## 流程 A2：通道选择卡片（免打字，宿主具备 Blueprint 能力时）
+
+目标：用一张二选一卡片替代文字提问，用户点击即选。链路：卡片点击 → `events.submit` → Binding → 后台接棒代理 → artifact 回显在卡片上。
+
+1. **能力门控**：仅当本会话技能列表能读到 `automation` 与 `widget` 技能（宿主具备 Blueprint 能力）时走本流程；读不到就文字提问，不要尝试调用 Widget/Automation 工具。
+2. **创建小组件** `Widget.create`（title「报名通道选择」，type html），声明 `events.submit` schema：
+
+   ```json
+   { "type": "object",
+     "properties": { "choice": { "type": "string", "enum": ["fastlane", "standard"] },
+                     "label": { "type": "string" } },
+     "required": ["choice", "label"] }
+   ```
+
+3. **写 index.html**（写入 create 返回的 workspaceRoot）：两张卡片并排——「Wildcard 直通通道」（badge：免审直通）与「普通通道」（badge：正常审核），各配一句话说明；点击后禁用两张卡、显示已选状态，调 `window.DaimonWidget.emit("submit", { choice, label })`；`onDataChange` 里读取 `data.main.message` 渲染接棒回复。所有 host API 调用必须 feature-detect（`if (runtime && typeof runtime.emit === 'function')`）。
+4. **创建后台接棒任务** `AutomationCreate`：execution `{ kind: "agent", mode: "background" }`，`input` json schema 与 submit 兼容（同结构即可），`result` artifact schema `{ "type": "object", "properties": { "message": { "type": "string" } }, "required": ["message"] }`，trigger manual。prompt 要点：根据 run input 的 choice 生成下一步文案——fastlane 输出知情授权话术（C1 四要素：读哪四项信息、截图、上传前逐条确认、不碰凭证，问是否同意）；standard 输出信息收集开场（姓名、联系方式、动机，一次问 1~3 项）；文案口语、80 字内，用 AutomationOutput 输出 `{ artifact: { message } }`。额度：每次点击触发一次模型运行，提示语里向用户说明「点一次会消耗少量额度」。
+5. **连接** `Binding.create`（automationId + widgetId）；`Widget.validate` 后 `Widget.show` 展示。
+6. **接棒**：卡片上收到回复后，在对话里按所选通道继续——fastlane 进入 C1 等用户答复，standard 进入流程 B。后续步骤（授权确认、信息收集）也可继续用同样的「卡片表单 + submit」模式做进卡片，让用户全程免打字。
+7. 对话结束后卡片即弃，不要把演示用小组件/任务长期保留。
 
 ## 流程 B：普通报名
 
