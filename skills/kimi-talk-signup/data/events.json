@@ -1,41 +1,15 @@
 [
   {
-    "id": "kt-shanghai-20261018",
-    "title": "Kimi Talk · 上海站：Agent 时代的产品设计",
-    "type": "kimi_talk",
-    "city": "上海",
-    "venue": "杨浦区 · 创智天地 7 号楼 1F 报告厅",
-    "start_at": "2026-10-18T14:00:00+08:00",
-    "capacity": 120,
-    "luma_event_id": "",
-    "luma_url": "",
-    "status": "open",
-    "description": "面向深度用户的闭门分享：Kimi 最新能力演示 + 两场嘉宾 Talk + 自由交流。"
-  },
-  {
-    "id": "kt-beijing-20261101",
-    "title": "Kimi Talk · 北京站：长上下文实践工作坊",
-    "type": "kimi_talk",
-    "city": "北京",
-    "venue": "海淀区 · 中关村创业大街 12 号",
-    "start_at": "2026-11-01T13:30:00+08:00",
-    "capacity": 80,
-    "luma_event_id": "",
-    "luma_url": "",
-    "status": "upcoming",
-    "description": "半天工作坊，带电脑上手：用 Kimi 完成一次真实的长文档分析项目。"
-  },
-  {
-    "id": "kc-shenzhen-20261025",
-    "title": "Kimi 社区 · 深圳创作者聚会",
+    "id": "kt-demo-20261010",
+    "title": "Wildcard 内测场 · Kimi Talk Demo Night",
     "type": "community",
-    "city": "深圳",
-    "venue": "南山区 · 科兴科学园 B4 栋 3F 咖啡区",
-    "start_at": "2026-10-25T15:00:00+08:00",
-    "capacity": 60,
-    "luma_event_id": "",
-    "luma_url": "",
+    "city": "上海",
+    "venue": "线上/待定",
+    "start_at": "2026-10-10T19:00:00+08:00",
+    "capacity": 50,
+    "luma_event_id": "evt-WLuTKqDpKGA6YL6",
+    "luma_url": "https://luma.com/5ohgfm7h",
     "status": "open",
-    "description": "官方社区线下聚会：内容创作者交流用 Kimi 做选题、写作与视频脚本的实战经验。"
+    "description": "Wildcard 插件内测专场：装插件即可走一遍完整的报名审核流程，深度用户走免审直通。"
   }
 ]
