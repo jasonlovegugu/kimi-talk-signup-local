@@ -1,11 +1,11 @@
 ---
-name: kimi-talk-signup
+name: wildcard-for-kimi
 description: 浏览 Kimi Talk 及 Kimi 官方社区线下活动、在对话里完成报名。装完后首次使用自动弹出真实活动列表并引导完成报名：深度/付费用户可授权后读取本人 Kimi 订阅信息进行快速核验，走 Wildcard 免审直通通道；报名表单对话式代填（含 Luma 付费/邀请/审批变体）。也用于活动组织者查看报名与分层结果。触发词：Kimi Talk、活动报名、线下活动、报名、Wildcard、Y 卡、深度用户通道、开始使用、最近有什么活动、查看报名。
 ---
 
-# Wildcard · for KIMI Talk
+# Wildcard for Kimi
 
-**Wildcard** 是通用的线下活动报名分层工具：真爱粉亮出订阅证明，免审直通；其余用户正常排队。本插件是 Wildcard 系列的 KIMI 社区版本（后续可出 for Grok / for ChatGPT 等版本，骨架复用）。
+**Wildcard** 是通用的线下活动报名分层工具：真爱粉亮出订阅证明，免审直通；其余用户正常排队。本插件是 Wildcard 系列的 Kimi 版（后续可出 Wildcard for Grok / Wildcard for ChatGPT 等版本，骨架复用）。
 
 两类用户两条路：
 

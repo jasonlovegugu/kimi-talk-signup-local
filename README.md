@@ -1,4 +1,4 @@
-# Wildcard · for KIMI Talk（kimi-talk-signup-local）
+# Wildcard for Kimi（wildcard-for-kimi）
 
 Kimi Work 插件：在对话里浏览 Kimi Talk 及 Kimi 官方社区线下活动并完成报名。深度/付费用户可授权读取本人 Kimi 订阅信息进行快速核验，达标走 Wildcard 免审直通通道；其余用户正常排队审核。
 
