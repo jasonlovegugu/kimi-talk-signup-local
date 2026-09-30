@@ -6,15 +6,21 @@ Wildcard 是通用的活动报名分层工具，本仓库为 KIMI 社区版本�
 
 ## 安装
 
-方式一（推荐）：在 Kimi 桌面版插件页「个人」页签，通过本地插件入口安装本仓库。
+把仓库链接或 zip 发给朋友，任选一种方式安装：
 
-方式二（命令行）：
+**方式一（命令行，直装 GitHub 链接，已实测通过）**：
 
 ```bash
-kimi-daimon kimi-plugin install https://github.com/jasonlovegugu/kimi-talk-signup-local --share-dir "<你的 daimon-share 目录>"
+/Applications/Kimi.app/Contents/Resources/resources/daimon-bundle/bin/kimi-daimon kimi-plugin install https://github.com/jasonlovegugu/kimi-talk-signup-local --share-dir "<你的 daimon-share 目录>"
 ```
 
-macOS 下 share 目录通常是 `~/Library/Application Support/kimi-desktop/daimon-share`。
+macOS 下 share 目录通常是 `~/Library/Application Support/kimi-desktop/daimon-share`。命令行装完后重启一次 Kimi 桌面版即可生效。
+
+**方式二（本地 zip）**：下载仓库 zip 并解压（保证 `kimi.plugin.json` 在解压后目录的根部），然后在 Kimi 桌面版插件页「个人」页签通过本地入口安装。
+
+## 更新
+
+仓库推送新版本后，在插件页点「更新」即可同步。
 
 ## 使用
 
